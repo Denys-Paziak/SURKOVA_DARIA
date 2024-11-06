@@ -1,0 +1,1561 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Unbounded:wght@200..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+}
+
+.container {
+    width: 1280px;
+    margin: 0 auto;
+}
+
+.header {
+    padding-top: 30px;
+}
+
+.header .logo {
+    width: 64px;
+    height: 64px;
+}
+
+.header .logo img {
+    width: 100%;
+    height: 100%;
+}
+
+.header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 27px;
+}
+
+nav {
+    display: flex;
+    gap: 77px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+nav a {
+    color: black;
+    font-size: 32px;
+    text-decoration: none;
+    transition: 0.6s;
+}
+
+
+nav a:hover {
+    color: #FE5009;
+}
+
+/* Базова стилізація бургер-меню */
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.burger-menu span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    transition: all 0.3s ease;
+}
+
+/* Анімація бургер-меню при відкритті */
+.burger-menu.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger-menu.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-menu.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Приховування навігації на мобільних */
+nav {
+    display: flex;
+    gap: 77px;
+}
+
+@media (max-width: 767px) {
+    .burger-menu {
+        display: flex;
+    }
+
+    nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 20px 0;
+        display: none;
+    }
+
+    nav.open {
+        display: flex;
+    }
+}
+
+/* Hero */
+.hero .text {
+    padding: 144px 56px 0 56px;
+}
+
+.hero .text h1,
+.hero .text h2 {
+    font-size: 128px;
+    font-family: "Unbounded", sans-serif;
+    font-weight: 400;
+    line-height: 128px;
+}
+
+.hero .row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 16px;
+}
+
+.hero .text p {
+    color: #FE5009;
+    font-size: 32px;
+    font-weight: 600;
+    width: 448px;
+    text-transform: uppercase;
+    text-align: right;
+}
+
+.hero .text .subtitle {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.bgHero {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+}
+
+/* Question */
+
+.question {
+    margin-top: 136px;
+    font-family: "Unbounded", sans-serif;
+    font-size: 32px;
+
+}
+
+.question .container {
+    padding: 0 88px 0 30px;
+}
+
+.questionBox {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.questionBox .icon {
+    width: 65px;
+    height: 65px;
+}
+
+.questionBox .icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.questionBox_text {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.questionBox__right img {
+    position: relative;
+    margin-left: auto;
+}
+
+.keyElementBox {
+    max-width: 880px;
+    padding: 35px 26px;
+    border: 4px solid black;
+    background: #FE5009;
+    border-radius: 60px;
+    text-align: center;
+    font-size: 32px;
+    margin: 0 auto;
+    margin-top: 34px;
+}
+
+.keyElementBox_textWhite {
+    color: #fff;
+    font-size: 48px;
+    margin-top: 12px;
+}
+
+/* About */
+
+.about .container {
+    margin-top: 142px;
+    padding-right: 80px;
+}
+
+.about .row {
+    display: flex;
+    gap: 40px;
+}
+
+
+
+.about_image {
+    position: relative;
+    min-width: 448px;
+    min-height: 696px;
+}
+
+.about_image::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100% - 32px);
+    height: calc(100% - 32px);
+    border: 3px solid #FE5009;
+
+}
+
+.about {
+    margin-bottom: 100px;
+}
+
+.about_image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about_text h2 {
+    text-transform: uppercase;
+    font-size: 64px;
+    font-family: "Unbounded", sans-serif;
+}
+
+.about_text p {
+    font-size: 30px;
+    font-weight: 400;
+    margin-top: 21px;
+}
+
+.row-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-top: 64px;
+}
+
+.row-tags-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 3px solid black;
+    padding: 10px 20px;
+    border-radius: 60px;
+    transition: 0.6s;
+}
+
+.row-tags-item:hover {
+    background: #000;
+    color: white;
+}
+
+.row-tags div:nth-child(3) {
+    margin-left: 98px;
+}
+
+.row-tags-item p {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.row-tags-item .icon {
+    width: 48px;
+    height: 48px;
+}
+
+.row-tags-item .icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.offer {
+    margin-top: 200px;
+}
+
+.offer h2 {
+    text-align: center;
+    font-size: 64px;
+    margin-bottom: 42px;
+}
+
+.offer-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.offer-card {
+    position: relative;
+    background: #FE5009;
+    border: 4px solid black;
+    color: #fff;
+    padding: 40px 24px;
+    min-width: 416px;
+}
+
+
+.offer-card_header {
+    z-index: 0;
+}
+
+.offer-card_header h3 {
+    font-size: 48px;
+    font-family: "Unbounded", sans-serif;
+    text-transform: uppercase;
+}
+
+.offer-card_header p {
+    text-transform: uppercase;
+}
+
+.offer-card_number {
+    position: absolute;
+    font-family: "Unbounded", sans-serif;
+    top: 20px;
+    right: 20px;
+    font-size: 36px;
+    font-weight: 500;
+    color: black;
+}
+
+.line {
+    height: 4px;
+    width: 100%;
+    background: #fff;
+    margin-top: 22px;
+}
+
+.offer-card_image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.15;
+    z-index: 0;
+    object-fit: cover;
+}
+
+.card_list {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 60px;
+    z-index: 1;
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.card_list div {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.offer-card button {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    color: #fff;
+    font-family: "Unbounded", sans-serif;
+    margin-top: 160px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 28px;
+    line-height: 28px;
+    font-weight: 500;
+    z-index: 1;
+    margin-left: auto;
+}
+
+.offer-card button p {
+    position: relative;
+}
+
+.offer-card button p::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    bottom: -8px;
+    left: 0;
+    background: white;
+}
+
+.offer-card:nth-child(2) {
+    background: white;
+    color: black;
+}
+
+.offer-card:nth-child(2) .line {
+    background: black;
+}
+
+.offer-card:nth-child(2) .offer-card_number {
+    color: #FE5009;
+}
+
+.offer-card:nth-child(2) button {
+    color: black;
+}
+
+.offer-card:nth-child(2) button p::before {
+    background: black;
+}
+
+
+.offer-card:nth-child(3) {
+    background: black;
+    color: #FE5009;
+}
+
+.offer-card:nth-child(3) .line {
+    background: #FE5009;
+}
+
+.offer-card:nth-child(3) .offer-card_number {
+    color: #FE5009;
+}
+
+.offer-card:nth-child(3) button {
+    color: #FE5009;
+}
+
+.offer-card:nth-child(3) button p::before {
+    background: #FE5009;
+}
+
+.ours-is-not {
+    position: relative;
+    margin-top: 173px;
+    padding-bottom: 170px;
+}
+
+.ours-is-not .title {
+    background: black;
+    color: white;
+    font-family: "Unbounded", sans-serif;
+    font-size: 48px;
+    border-radius: 60px;
+    max-width: 688px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 34px 40px;
+    text-transform: uppercase;
+    margin-bottom: 62px;
+}
+
+.ours-is-not .title span {
+    color: #FE5009;
+}
+
+
+.ours-is-not-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+}
+
+.ours-is-not-list_item {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    font-family: "Unbounded", sans-serif;
+    font-size: 32px;
+    text-transform: uppercase;
+}
+
+.ours-is-not .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.why {
+    margin-bottom: 176px;
+}
+
+.why-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.why .title {
+    font-family: "Unbounded", sans-serif;
+    font-size: 64px;
+}
+
+.why-box {
+    position: relative;
+
+}
+
+.why .row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: space-between;
+    gap: 60px;
+    margin-top: 38px;
+}
+
+.why-box .rectangle {
+    width: 96px;
+    height: 174px;
+    background: #FE5009;
+}
+
+.why-box .icon {
+    position: absolute;
+    top: 100px;
+    left: 90px;
+    font-size: 70px;
+}
+
+.why-box h3 {
+    font-family: "Unbounded", sans-serif;
+    font-size: 30px;
+    margin-top: 35px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.why-box p {
+    font-size: 24px;
+    font-weight: 400;
+    margin-top: 10px;
+}
+
+
+.banner {
+    position: relative;
+    background: black;
+    color: white;
+}
+
+.banner .container {
+    padding: 8px 0px 16px 68px;
+}
+
+.banner h3 {
+    background: black;
+    color: white;
+    font-family: "Unbounded", sans-serif;
+    text-transform: uppercase;
+    font-size: 100px;
+}
+
+.banner h3 span {
+    color: #FE5009;
+}
+
+.banner .label {
+    position: absolute;
+    top: 50px;
+    right: 26%;
+    background: #FE5009;
+    color: black;
+    width: 340px;
+    font-family: "Unbounded", sans-serif;
+    text-transform: uppercase;
+    font-size: 36px;
+    padding: 10px;
+    transform: rotate(15deg);
+}
+
+
+.cases .container {
+    display: flex;
+    gap: 30px;
+    padding: 136px 75px 0px 75px;
+}
+
+.cases .text {
+    width: 50%;
+    font-size: 38px;
+}
+
+.cases .text__top {
+    text-align: right;
+}
+
+.cases .text__bottom {
+    color: #FE5009;
+    font-family: "Unbounded", sans-serif;
+    font-size: 32px;
+    width: 385px;
+    margin-left: auto;
+    margin-top: 40px;
+}
+
+.cases .image {
+    width: 568px;
+    height: 848px;
+    border: 4px solid black;
+}
+
+.cases .image img {
+    width: 100%;
+    height: 100%;
+}
+
+.cases .vector-box {
+    display: flex;
+    gap: 20px;
+    align-items: flex-end;
+    justify-content: center;
+    font-size: 80px;
+    margin-top: 130px;
+}
+
+.cases .vector {
+    width: 96px;
+    height: 174px;
+    background: #FE5009;
+    margin-bottom: 30px;
+}
+
+.excellence {
+    position: relative;
+    padding: 200px 0;
+}
+
+.excellence .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.excellence .bg img {
+    width: 100%;
+    height: 100%;
+}
+
+
+.excellence h2 {
+    text-align: center;
+    font-size: 170px;
+    font-family: "Unbounded", sans-serif;
+}
+
+.excellence h3 {
+    text-align: center;
+    font-size: 48px;
+    font-family: "Unbounded", sans-serif;
+    text-transform: uppercase;
+}
+
+.excellence .row {
+    display: flex;
+    font-size: 32px;
+    color: #FE5009;
+    max-width: 850px;
+    margin: 10px auto;
+}
+
+.excellence .row span {
+    font-size: 70px;
+}
+
+.text-line {
+    background: black;
+    font-size: 64px;
+    font-family: "Unbounded", sans-serif;
+    color: white;
+    text-wrap: nowrap;
+    width: 100%;
+    overflow: hidden;
+    padding: 20px 0px;
+}
+
+.answers .container {
+    display: flex;
+    gap: 40px;
+    padding: 68px 40px;
+}
+
+.answers-box {
+    border: 4px solid black;
+    border-radius: 70px;
+
+}
+
+.answers-box .title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    font-size: 36px;
+    font-family: "Unbounded", sans-serif;
+    min-height: 140px;
+    padding: 26px 56px;
+}
+
+.answers-box .title svg {
+    min-width: 56px;
+    min-height: 56px;
+}
+
+.answers .v-text {
+    writing-mode: vertical-rl;
+    text-orientation: sideways-right;
+    transform: rotate(180deg);
+    color: #FE5009;
+    font-size: 47px;
+    font-family: "Unbounded", sans-serif;
+    text-wrap: nowrap;
+    text-align: right;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.answers-col {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.chit-chat .title {
+    font-size: 64px;
+    font-family: "Unbounded", sans-serif;
+}
+
+.chit-chat .row {
+    display: flex;
+    gap: 50px;
+}
+
+.chit-chat .vector-box {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    justify-content: center;
+    font-size: 80px;
+    margin-top: 130px;
+}
+
+.chit-chat .vector {
+    width: 96px;
+    height: 174px;
+    background: #FE5009;
+    margin-top: 60px;
+}
+
+
+.chit-chat form {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    width: 100%;
+    max-width: 528px;
+}
+
+.chit-chat form input,
+.chit-chat form textarea {
+    border: none;
+    outline: none;
+    border-bottom: 4px solid black;
+    font-family: "Unbounded", sans-serif;
+    padding: 15px 10px;
+    width: 100%;
+    font-size: 28px;
+    text-transform: uppercase;
+}
+
+.chit-chat form textarea {
+    border-radius: 20px;
+    border: 3px solid black;
+    min-height: 225px;
+
+}
+
+
+.chit-chat form .btn {
+    background: #FE5009;
+    color: #fff;
+    border-radius: 70px;
+    max-width: 220px;
+    border: 3px solid black;
+    margin-left: auto;
+
+}
+
+.chit-chat .text {
+    font-size: 40px;
+}
+
+
+.prediction .container {
+    background: black;
+    border-radius: 200px;
+    padding: 80px 100px;
+}
+
+
+.prediction .vector-box {
+    display: flex;
+    gap: 20px;
+    align-items: flex-end;
+    justify-content: center;
+    font-size: 80px;
+}
+
+
+.mess {
+    background: #fff;
+    padding: 5px 20px;
+    font-family: "Unbounded", sans-serif;
+    font-size: 30px;
+    border-radius: 50px;
+    margin-bottom: auto;
+}
+
+.prediction {
+    margin-top: 230px;
+    margin-bottom: 170px;
+}
+
+.prediction .vector {
+    width: 96px;
+    height: 174px;
+    background: #FE5009;
+    margin-bottom: 60px;
+}
+
+
+.prediction .btn {
+    display: block;
+    background: #FE5009;
+    color: #fff;
+    border-radius: 70px;
+    border: 3px solid black;
+    padding: 20px 64px;
+    text-transform: uppercase;
+    font-family: "Unbounded", sans-serif;
+    font-size: 36px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.footer {
+    position: relative;
+    font-family: "Unbounded", sans-serif;
+    background: #F2F1E5;
+    padding: 20px 0;
+    text-transform: uppercase;
+}
+
+.footer a {
+    color: #FE5009;
+    font-weight: 500;
+    font-size: 36px;
+}
+
+.footer .row {
+    display: flex;
+    gap: 24px;
+}
+
+.footer .level-up {
+    text-align: right;
+    font-weight: 500;
+    font-size: 36px;
+}
+
+.footer .bottom-text {
+    display: flex;
+    gap: 200px;
+    justify-content: flex-end;
+    font-weight: 500;
+    font-size: 20px;
+    padding-right: 130px;
+}
+
+.footer .image {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 90%;
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 100%;
+    }
+
+    .header {
+        padding-top: 16px;
+    }
+
+    .header .logo {
+        width: 29px;
+        height: 29px;
+    }
+
+
+    .header .container {
+        padding: 0 43px;
+    }
+
+    /* Hero */
+    .hero .text {
+        padding: 70px 32px 0 32px;
+    }
+
+    .hero .text h1,
+    .hero .text h2 {
+        font-size: 40px;
+        line-height: 40px;
+    }
+
+    .hero .text p {
+        font-size: 11px;
+        width: 600px;
+    }
+
+    .hero .text .subtitle {
+        margin-top: 16px;
+        width: 100%;
+    }
+
+    /* Question */
+
+    .question {
+        margin-top: 93px;
+        font-size: 12px;
+    }
+
+    .question .quotes {
+        display: none;
+    }
+
+    .question .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 0;
+    }
+
+    .questionBox {
+        width: 295px;
+        gap: 10px;
+        justify-content: flex-start;
+        margin-bottom: 20px;
+    }
+
+    .questionBox .icon {
+        min-width: 25px;
+        width: 25px;
+        height: 25px;
+    }
+
+    .questionBox_text {
+        gap: 10px;
+    }
+
+    .questionBox_text br {
+        display: none;
+    }
+
+    .questionBox__right .icon {
+        order: 0;
+    }
+
+    .questionBox__right p {
+        order: 1;
+    }
+
+    .keyElementBox {
+        max-width: 290px;
+        width: 100%;
+        padding: 10px 10px;
+        border: 2px solid black;
+        border-radius: 20px;
+        font-size: 10px;
+        text-transform: uppercase;
+        font-family: "Unbounded", sans-serif;
+        font-weight: 500;
+    }
+
+    .keyElementBox_textWhite {
+        font-size: 16px;
+        font-weight: 400;
+    }
+
+    /* About */
+
+    .about .container {
+        margin-top: 67px;
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+
+    .about .row {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 40px;
+        padding-right: 48px;
+        padding-left: 48px;
+    }
+
+
+
+    .about_image {
+        position: relative;
+        min-width: auto;
+        min-height: auto;
+        width: 100%;
+    }
+
+    .about {
+        margin-bottom: 0px;
+    }
+
+
+    .about_text h2 {
+        text-transform: uppercase;
+        font-size: 27px;
+        font-family: "Unbounded", sans-serif;
+    }
+
+    .about_text p {
+        font-size: 12px;
+        margin-top: 10px;
+    }
+
+    .row-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-top: 23px;
+        padding-right: 32px;
+        padding-left: 32px;
+
+    }
+
+    .row-tags div {
+        width: 100%;
+    }
+
+    .row-tags-item {
+        width: 100%;
+        gap: 10px;
+        border: 2px solid black;
+        padding: 10px 20px;
+    }
+
+    .row-tags div:nth-child(3) {
+        margin-left: 0px;
+    }
+
+    .row-tags-item p {
+        font-size: 15px;
+    }
+
+    .row-tags-item .icon {
+        width: 27px;
+        height: 27px;
+        min-width: 27px;
+        min-height: 27px;
+    }
+
+    .offer {
+        margin-top: 96px;
+        padding: 0 47px;
+    }
+
+    .offer h2 {
+        font-family: "Unbounded", sans-serif;
+        font-weight: 500;
+        font-size: 27px;
+    }
+
+    .offer-row {
+        flex-direction: column;
+        gap: 22px;
+    }
+
+
+    .offer-card {
+        min-width: auto;
+        width: 100%;
+        border: 2px solid black;
+        padding: 20px 24px;
+    }
+
+
+    .offer-card_header h3 {
+        font-size: 27px;
+        font-family: "Unbounded", sans-serif;
+        text-transform: uppercase;
+    }
+
+    .offer-card_number {
+        font-size: 25px;
+    }
+
+    .line {
+        margin-bottom: 7px;
+    }
+
+
+    .card_list {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        margin-top: 36px;
+        font-size: 23px;
+        font-weight: 500;
+    }
+
+
+    .offer-card button {
+        gap: 10px;
+        margin-top: 50px;
+        font-size: 20px;
+        line-height: 20px;
+    }
+
+    .offer-card button p::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 4px;
+        bottom: -8px;
+        left: 0;
+        background: white;
+    }
+
+    .ours-is-not {
+        position: relative;
+        margin-top: 77px;
+        padding-bottom: 170px;
+        padding: 73px;
+    }
+
+    .ours-is-not .title {
+        color: white;
+        font-family: "Unbounded", sans-serif;
+        font-size: 18px;
+        font-weight: 500;
+        max-width: auto;
+        padding: 10px;
+        text-transform: uppercase;
+        margin-bottom: 23px;
+    }
+
+
+    .ours-is-not-list {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .ours-is-not-list svg {
+        width: 19px;
+        height: 19px;
+    }
+
+    .ours-is-not-list_item {
+        gap: 15px;
+        font-size: 17px;
+    }
+
+    .why {
+        margin-bottom: 0px;
+        margin: 0 40px;
+    }
+
+    .why-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .why .title {
+        font-family: "Unbounded", sans-serif;
+        font-size: 27px;
+    }
+
+
+    .why .row {
+        grid-template-columns: 1fr;
+        gap: 70px;
+    }
+
+
+    .why-box h3 {
+        font-size: 18px;
+    }
+
+    .why-box p {
+        font-size: 14px;
+    }
+
+    .banner {
+        margin-top: 100px;
+        position: relative;
+        background: black;
+        color: white;
+    }
+
+    .banner .container {
+        padding: 8px 0px 16px 33px;
+    }
+
+    .banner h3 {
+        font-size: 28px;
+    }
+
+
+    .banner .label {
+        top: 20px;
+        right: 5%;
+        width: 110px;
+        font-size: 12px;
+        padding: 3px;
+    }
+
+
+    .cases .container {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        padding: 42px 60px;
+    }
+
+    .cases .text {
+        width: 100%;
+        font-size: 16px;
+    }
+
+
+    .cases .text__bottom {
+        font-size: 16px;
+        width: 234px;
+        margin-top: 20px;
+    }
+
+    .cases .text__bottom svg {
+        width: 16px;
+        height: 16px;
+        transform: rotate(90deg);
+    }
+
+    .cases .image {
+        width: 100%;
+        height: 490px;
+        border: 2px solid black;
+    }
+
+    .cases .image img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .cases .vector-box {
+        margin-top: 80px;
+    }
+
+
+    .excellence {
+        position: relative;
+        padding: 200px 30px;
+    }
+
+    .excellence .bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+
+    .excellence .bg img {
+        width: 100%;
+        height: 100%;
+    }
+
+
+    .excellence h2 {
+        text-align: center;
+        font-size: 60px;
+        font-family: "Unbounded", sans-serif;
+    }
+
+    .excellence h3 {
+        text-align: center;
+        font-size: 18px;
+        font-family: "Unbounded", sans-serif;
+        text-transform: uppercase;
+    }
+
+    .excellence .row {
+        flex-direction: row-reverse;
+        align-items: center;
+        font-size: 14px;
+    }
+
+    .excellence .row span {
+        font-size: 46px;
+    }
+
+    .text-line {
+        font-size: 26px;
+    }
+
+    .answers .container {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        padding: 68px 40px;
+    }
+
+    .answers-box {
+        border: 2px solid black;
+        border-radius: 30px;
+
+    }
+
+    .answers-box .title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 5px;
+        font-size: 14px;
+        font-family: "Unbounded", sans-serif;
+        min-height: 100px;
+        padding: 5px 16px;
+    }
+
+    .answers-box .title svg {
+        min-width: 20px;
+        min-height: 20px;
+        width: 20px;
+        height: 20px;
+    }
+
+    .answers .v-text {
+        writing-mode: initial;
+        transform: rotate(0deg);
+        font-size: 14px;
+    }
+
+    .answers-col {
+        gap: 16px;
+    }
+
+    .chit-chat {
+        padding: 0 33px;
+    }
+
+    .chit-chat .title {
+        font-size: 22px;
+        font-family: "Unbounded", sans-serif;
+        text-transform: uppercase;
+        font-weight: 500;
+    }
+
+    .chit-chat .row {
+        display: flex;
+        gap: 50px;
+    }
+
+    .chit-chat .vector-box {
+        margin-top: 80px;
+        font-size: 20px;
+    }
+
+    .chit-chat .vector-box .vector {
+        width: 36px;
+        height: 50px;
+    }
+
+    .chit-chat form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        max-width: auto;
+    }
+
+    .chit-chat form input,
+    .chit-chat form textarea {
+        border-bottom: 1px solid black;
+        padding: 5px 10px;
+        font-size: 12px;
+        text-transform: uppercase;
+    }
+
+    .chit-chat form textarea {
+        border-radius: 5px;
+        border: 1px solid black;
+        min-height: 70px;
+    }
+
+
+    .chit-chat form .btn {
+        background: #FE5009;
+        color: #fff;
+        border-radius: 70px;
+        max-width: 220px;
+        border: 1px solid black;
+        margin-left: auto;
+
+    }
+
+    .chit-chat .text {
+        font-size: 12px;
+    }
+
+
+    .prediction .container {
+        border-radius: 40px;
+        padding: 50px 50px;
+    }
+
+
+    .prediction .vector-box {
+        display: flex;
+        gap: 20px;
+        align-items: flex-end;
+        justify-content: center;
+        font-size: 37px;
+    }
+
+
+    .mess {
+        background: #fff;
+        padding: 5px 20px;
+        font-size: 12px;
+        border-radius: 50px;
+        margin-bottom: auto;
+    }
+
+    .prediction {
+        margin-top: 70px;
+        margin-bottom: 170px;
+    }
+
+    .prediction .vector {
+        width: 47px;
+        height: 72px;
+        background: #FE5009;
+        margin-bottom: 20px;
+    }
+
+
+    .prediction .btn {
+        border-radius: 30px;
+        border: 1px solid black;
+        padding: 10px 20px;
+        text-transform: uppercase;
+        font-family: "Unbounded", sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        margin-top: 30px;
+    }
+
+    .footer {
+        padding: 20px 0;
+        text-transform: uppercase;
+    }
+
+    .footer a {
+        font-size: 16px;
+    }
+
+    .footer .row {
+        display: flex;
+        gap: 24px;
+    }
+
+    .footer .level-up {
+        text-align: right;
+        font-weight: 500;
+        font-size: 14px;
+    }
+
+    .footer .bottom-text {
+        display: flex;
+        gap: 200px;
+        justify-content: flex-end;
+        font-weight: 500;
+        font-size: 20px;
+        padding-right: 130px;
+    }
+
+    .footer .footer-bg {
+        width: 100%;
+    }
+
+    .footer {
+        overflow: hidden;
+    }
+
+    .footer .image {
+        height: 90%;
+        width: 70%;
+        object-fit: cover;
+        object-position: top;
+        transform: translateX(-20%)
+    }
+
+}
