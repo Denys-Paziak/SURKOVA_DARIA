@@ -218,6 +218,7 @@ nav {
 /* Hero */
 .hero .text {
     padding: 144px 56px 0 56px;
+    position: relative;
 }
 
 .hero .text h1,
@@ -248,11 +249,30 @@ nav {
     width: 100%;
 }
 
+.hero .rectangle {
+    width: 64px;
+    height: 112px;
+    background-color: var(--orange);
+    position: absolute;
+    right: 70px;
+    top: 160px;
+    z-index: -1;
+}
+
+.hero .line {
+    width: 438px;
+    background-color: var(--orange);
+    position: absolute;
+    right: 24px;
+    top: 206px;
+    z-index: -1;
+}
+
 .bgHero {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: -1;
+    z-index: -2;
     width: 100%;
 }
 
@@ -1390,6 +1410,10 @@ nav {
 }
 
 @media (max-width: 1280px) {
+    .hero .line {
+        display: none;
+    }
+    
     .offer-row {
         flex-direction: column;
         align-items: center;
@@ -1479,6 +1503,11 @@ nav {
 
     .hero .text p {
         font-size: 22px;
+    }
+
+    .hero .rectangle {
+        width: 40px;
+        height: 70px;
     }
 
     .question {
@@ -1780,7 +1809,7 @@ nav {
     }
 
     .hero .text {
-        padding: 70px 32px 0 32px;
+        padding: 70px 0px 0px;
     }
 
     .hero .text h1,
@@ -1797,6 +1826,13 @@ nav {
     .hero .text .subtitle {
         margin-top: 16px;
         width: 100%;
+    }
+
+    .hero .rectangle {
+        width: 17px;
+        height: 29.5px;
+        right: 10px;
+        top: 76px;
     }
 
     /* Question */
