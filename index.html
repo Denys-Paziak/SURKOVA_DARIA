@@ -16,9 +16,9 @@
                 <img src="images/Logo.svg" alt="Logo">
             </div>
             <nav>
-                <a href="">About</a>
-                <a href="">Services</a>
-                <a href="">Contact</a>
+                <a href="#about">About</a>
+                <a href="#offer">Services</a>
+                <a href="#chit-chat">Contact</a>
             </nav>
             <div class="burger-menu">
                 <span></span>
@@ -30,15 +30,18 @@
     <section class="hero">
         <div class="container">
             <div class="text">
-                <h1 data-aos="fade-up">SURKOVA</h1>
+                <div class="title">
+                    <h1 data-aos="fade-up">SURKOVA</h1>
+                    <img src="./images/Fox Header.gif" alt="Fox">
+                </div>
                 <div class="row">
                     <p data-aos="fade-up" data-aos-delay="600">Opening new horizons through creativity</p>
                     <h2 data-aos="fade-up" data-aos-delay="300">DARIA</h2>
                 </div>
                 <img data-aos="fade-up" data-aos-delay="1200" class="subtitle" src="images/GRAPHIC DESIGNER.svg"
                     alt="GRAPHIC DESIGNER">
-                <div class="rectangle"></div>
-                <div class="line"></div>
+                <!-- <div class="rectangle"></div>
+                <div class="line"></div> -->
             </div>
         </div>
     </section>
@@ -76,7 +79,7 @@
         </div>
     </section>
 
-    <section class="about">
+    <section id="about" class="about">
         <div class="container">
             <div class="row">
                 <div class="about_image" data-aos="fade-up">
@@ -163,7 +166,7 @@
         </div>
     </section>
 
-    <section class="offer">
+    <section id="offer" class="offer">
         <div class="container">
             <h2>WHAT CAN WE OFFER YOU?</h2>
             <div class="offer-row">
@@ -386,7 +389,7 @@
             </div>
         </div>
     </section>
-    <section class="why">
+    <section id="why" class="why">
         <div class="container">
             <h2 class="title">WHY SRKV DESIGNS?</h2>
             <div class="row">
@@ -544,8 +547,21 @@
                         </h2>
                         <p class="text-1">Dear SRKV Team,</p>
                         <p class="text-2">my name is <input type="text" placeholder="name">, FROM<input type="text" placeholder="brand">.</p>
-                        <p class="text-3">I´m interested in : <span>GRAPHIC DESIGN</span> <span>BRAnD DESIGN</span> <span>DIGITAL DESIGN</span></p>
-                        <p class="text-4">& ready to invest: <span>&lt;€300</span> <span>€300-1500</span> <span>€1500-2000</span> <span>€2000+</span></p>
+                        <!-- <p class="text-3">I´m interested in : <span>GRAPHIC DESIGN</span> <span>BRAnD DESIGN</span> <span>DIGITAL DESIGN</span></p> -->
+                        <p class="text-3">
+                            I´m interested in : 
+                            <label><input type="checkbox" name="design" value="graphic" /><span>GRAPHIC DESIGN</span></label> 
+                            <label><input type="checkbox" name="design" value="brand" /><span>BRAND DESIGN</span></label> 
+                            <label><input type="checkbox" name="design" value="digital" /><span>DIGITAL DESIGN</span></label>
+                        </p>
+                        <!-- <p class="text-4">& ready to invest: <span>&lt;€300</span> <span>€300-1500</span> <span>€1500-2000</span> <span>€2000+</span></p> -->
+                        <p class="text-4">
+                            & ready to invest: 
+                            <label><input type="checkbox" name="invest" value="300" /><span>&lt;€300</span></label>
+                            <label><input type="checkbox" name="invest" value="300-1500" /><span>€300-1500</span></label>
+                            <label><input type="checkbox" name="invest" value="1500-2000" /><span>€1500-2000</span></label>
+                            <label><input type="checkbox" name="invest" value="2000+" /><span>€2000+</span></label>
+                        </p>
                         <p class="text-5">contact me back at: <input type="email" placeholder="email">.</p>
                         <p class="text-6">Oh, and also some additional info: <input type="text" placeholder="your message"></p>
                         <div class="submit-btn-container"><input class="submit-btn" value="SUBMIT" type="submit"></div>
@@ -693,7 +709,7 @@
             </div>
         </div>
     </section>
-    <section class="chit-chat">
+    <section id="chit-chat" class="chit-chat">
         <div class="container">
             <h2 class="title">Let's chit-chat a little, SHALL WE?</h2>
             <div class="row">
@@ -721,6 +737,7 @@
                 <svg width="501" height="376" viewBox="0 0 501 376" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M153.867 311.061C153.867 305.862 153.867 300.663 153.867 295.173C148.208 295.302 147.346 300.394 145.723 304.031C141.139 314.303 137.083 324.807 132.862 335.236C132.536 336.041 132.435 336.975 132.414 337.854C132.068 352.117 121.398 360.114 112.01 367.973C107.311 371.906 99.3165 372.205 92.6953 373.605C87.1649 374.775 81.4328 374.978 75.8482 375.94C71.3715 376.712 66.1338 369.844 67.0355 364.059C68.1805 356.713 75.2831 350.22 82.4765 347.717C86.3236 346.378 90.6058 343.069 92.3156 339.527C96.9817 329.86 100.523 319.647 104.24 309.553C106.692 302.896 109.001 296.152 110.782 289.297C112.581 282.372 113.238 275.147 115.179 268.27C116.566 263.358 115.199 259.281 113.261 254.561C105.831 256.531 98.3594 258.6 90.8395 260.48C83.6301 262.283 76.2994 263.641 69.1534 265.652C62.4205 267.546 55.5017 269.36 49.3614 272.53C45.8837 274.325 43.5077 278.58 41.1729 282.079C38.0381 286.777 35.5756 291.908 32.5467 296.681C28.4882 303.076 18.4505 305.555 13.6041 304.572C7.51411 303.337 0.0279878 295.393 6.53427e-05 288.926C-0.0139286 285.678 2.22197 281.775 4.62841 279.298C9.70903 274.067 14.0786 268.805 16.0142 261.523C18.4289 252.439 24.8068 246.445 33.1436 242.053C49.3644 233.508 65.4168 224.649 81.4961 215.843C85.3088 213.755 88.5242 206.675 87.7244 202.628C85.5875 191.814 88.0648 181.613 90.5378 171.064C92.4174 163.047 91.0394 154.262 90.8343 145.825C90.8174 145.13 88.7476 144.112 87.5106 143.882C81.9198 142.845 78.0288 146.377 73.8994 149.183C71.845 150.579 69.8101 152.003 66.9847 153.509C63.1589 154.438 60.1148 155.273 57.0705 156.109C50.2734 156.065 44.0207 154.469 38.5958 150.154C31.3823 144.417 32.1603 137.313 36.3473 131.228C42.0583 122.929 46.1629 113.862 47.0995 103.991C47.5905 98.8134 45.1102 93.4001 44.2882 88.0459C43.8319 85.0731 44.0259 82.0024 43.9284 78.9758C43.8224 75.6861 44.6369 72.0202 43.4464 69.1749C39.3454 59.3732 33.6753 50.1407 30.3469 40.1242C28.4535 34.426 29.6324 27.6034 30.0634 21.3298C30.2688 18.3386 35.6281 17.5477 39.7326 19.7727C49.3807 25.0029 58.9642 30.35 68.5999 35.6028C69.6676 36.1848 70.8731 36.6495 72.0692 36.8494C79.8305 38.1466 82.9074 35.2279 84.6821 26.8154C86.2916 19.1858 88.9015 11.7619 91.0921 4.25365C92.5158 -0.626078 96.2246 -0.988835 99.3758 1.55363C103.841 5.1557 108.322 9.22678 111.328 14.0018C116.737 22.5941 121.078 31.847 125.821 40.8466C127.719 44.4476 129.14 48.346 131.398 51.701C141.733 67.0573 147.663 84.4903 155.763 100.89C161.405 112.315 169.371 122.651 176.628 133.253C183.977 143.988 193.027 153.257 204.212 160.079C212.06 164.865 220.787 168.262 228.545 173.17C240.144 180.506 250.364 189.346 256.745 201.945C263.768 215.811 271.319 229.415 278.572 243.168C284.45 254.313 286.469 266.562 288.582 278.742C290.444 289.475 291.958 300.267 293.492 310.174C307.335 308.012 321.259 305.221 335.324 303.825C348.078 302.56 361.019 302.064 373.817 302.605C387.746 303.194 400.814 308.28 413.833 312.994C425.552 317.238 437.31 321.377 449.035 325.605C460.373 329.694 471.999 333.182 482.904 338.201C489.557 341.263 495.086 346.716 501 351.008C498.014 356.187 494.999 358.276 490.14 357.792C487.942 357.574 485.629 358.986 483.333 359.14C478.809 359.443 474.252 359.25 469.722 359.51C464.883 359.788 460.058 360.331 455.231 360.799C451.482 361.162 447.745 361.824 443.99 361.945C427.148 362.49 410.302 362.888 392.545 363.357C390.071 363.697 388.509 364.02 386.947 364.342C376.344 364.879 365.739 365.386 355.138 365.959C339.152 366.822 323.169 367.73 306.377 368.667C305.027 369.024 304.485 369.334 303.942 369.643C288.158 369.669 272.373 369.742 256.589 369.673C254.134 369.662 251.683 369.002 248.477 368.732C247.18 369.124 246.636 369.425 246.092 369.727C242.794 369.746 239.496 369.765 235.306 369.792C232.852 370.148 231.29 370.496 229.728 370.843C220.247 370.937 210.766 371.031 200.511 371.156C199.19 371.477 198.644 371.768 198.097 372.058C190.228 372.603 182.361 373.55 174.49 373.586C165.507 373.627 156.5 373.077 147.55 372.275C145.432 372.085 142.269 370.219 141.754 368.491C140.843 365.434 140.487 361.305 141.904 358.686C144.162 354.513 147.542 350.501 151.405 347.725C155.864 344.52 155.719 340.745 155.31 336.392C154.828 331.259 154.404 326.121 153.928 320.199C153.578 318.857 153.255 318.301 152.932 317.746C152.955 316.571 152.978 315.397 153.291 313.595C153.677 312.333 153.772 311.697 153.867 311.061Z" fill="#FD500A"/>
                 </svg>
+                <!-- <div class="mess-container"><p class="mess"><span class="mess-before"><span></span></span>Chill, it is what it is</p></div> -->
                 <div class="mess-container"><p class="mess"><span class="mess-before"><span></span></span>Chill, it is what it is</p></div>
             </div>
             <button id="prediction-hide-text-toggle" class="btn">yOur Prediction</button>
@@ -750,7 +767,7 @@
             </div>
         </div>
     </section>
-    <footer class="footer">
+    <footer id="footer" class="footer">
         <div class="container">
             <div class="row">
                 <a href="">INSTAGRAM</a><a href="">GMAIL</a>

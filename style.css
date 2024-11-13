@@ -13,6 +13,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: "Montserrat", sans-serif;
 }
@@ -216,6 +220,10 @@ nav {
 }
 
 /* Hero */
+.hero .container {
+    overflow: hidden;
+}
+
 .hero .text {
     padding: 144px 56px 0 56px;
     position: relative;
@@ -233,6 +241,17 @@ nav {
     align-items: center;
     justify-content: flex-end;
     gap: 16px;
+}
+
+.hero .text .title {
+    display: flex;
+    justify-content: space-between;
+    max-height: 128px;
+}
+
+.hero .text .title img {
+    height: 224px;
+    transform: translateY(-91px);
 }
 
 .hero .text p {
@@ -346,7 +365,6 @@ nav {
 
 .about .container {
     margin-top: 142px;
-    padding-right: 80px;
 }
 
 .about .row {
@@ -414,6 +432,7 @@ nav {
 .row-tags-item {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 10px;
     border: 3px solid black;
     padding: 10px 20px;
@@ -426,8 +445,25 @@ nav {
     color: white;
 }
 
+.row-tags div[data-aos] {
+    max-width: 568px;
+    flex-basis: 100%;
+}
+
 .row-tags div:nth-child(3) {
-    margin-left: 98px;
+    margin-left: 120px;
+}
+
+.row-tags div[data-aos]:nth-child(5){
+    max-width: 400px;
+}
+
+.row-tags div[data-aos]:nth-child(6){
+    max-width: 456px;
+}
+
+.row-tags div[data-aos]:nth-child(7){
+    max-width: 376px;
 }
 
 .row-tags-item p {
@@ -994,6 +1030,23 @@ nav {
     padding: 0px 32px;
 }
 
+.get-started form p label input[type="checkbox"] {
+    display: none;
+}
+
+.get-started form p label span {
+    display: inline-block;
+    padding: 0px 32px;
+    border: 3px solid black;
+    border-radius: 70px;
+    cursor: pointer;
+}
+
+.get-started form p label input[type="checkbox"]:checked + span {
+    background-color: black;
+    color: white;
+}
+
 .get-started form .text-1 {
     line-height: 40px;
     margin-bottom: 8px;
@@ -1028,7 +1081,7 @@ nav {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
+    gap: 10px;
     row-gap: 24px;
     margin-bottom: 16px;
 }
@@ -1410,10 +1463,15 @@ nav {
 }
 
 @media (max-width: 1280px) {
+    .hero .text .title img {
+        height: 128px;
+        transform: translateY(0);
+    }
+
     .hero .line {
         display: none;
     }
-    
+
     .offer-row {
         flex-direction: column;
         align-items: center;
@@ -1438,6 +1496,10 @@ nav {
 }
 
 @media (max-width: 1150px) {
+    .hero .text .title img {
+        display: none;
+    }
+
     .about .container {
         padding: 0 32px;
     }
@@ -1473,8 +1535,20 @@ nav {
         width: 100%;
     }
 
+    .row-tags {
+        flex-wrap: nowrap;
+        flex-direction: column;
+        align-items: center;
+    }
+
     .row-tags div:nth-child(3) {
         margin: 0;
+    }
+
+    .row-tags div[data-aos]:nth-child(5),
+    .row-tags div[data-aos]:nth-child(6),
+    .row-tags div[data-aos]:nth-child(7) {
+        max-width: 568px;
     }
 
     .footer .image {
@@ -1499,6 +1573,11 @@ nav {
     .hero .text h1, .hero .text h2 {
         font-size: 84px;
         line-height: 104px;
+    }
+
+    .hero .text .title img {
+        display: flex;
+        height: 100px;
     }
 
     .hero .text p {
@@ -1812,10 +1891,19 @@ nav {
         padding: 70px 0px 0px;
     }
 
+    .hero .text .title {
+        max-height: 40px;
+    }
+
     .hero .text h1,
     .hero .text h2 {
         font-size: 40px;
         line-height: 40px;
+    }
+
+    .hero .text .title img {
+        height: 55px;
+        transform: translateY(-15px);
     }
 
     .hero .text p {
