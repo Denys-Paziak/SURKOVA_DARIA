@@ -1353,18 +1353,24 @@ nav {
 .mess {
     background: #fff;
     font-family: "Unbounded", sans-serif;
-    font-size: 30px;
+    /*font-size: 30px;*/
     border-radius: 50px;
     margin-bottom: auto;
     position: absolute;
     top: 0;
     right: 0;
-    padding: 38px 70px;
     min-width: 488px;
 }
 
+
 .mess .mess-before {
     position: relative;
+    padding: 38px 70px;
+    font-size: 20px;
+}
+
+#mess-text.fs-18 {
+    font-size: 18px;
 }
 
 .mess .mess-before span {
@@ -1372,8 +1378,8 @@ nav {
     width: 15px;
     height: 30px;
     background-color: #fff;
-    bottom: -61px;
-    left: -35px;
+    left: 21px;
+    bottom: -22px;
     clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
     transform: rotate(211deg);
 }
@@ -1404,12 +1410,21 @@ nav {
     margin: 0 auto;
     margin-top: 30px;
     cursor: pointer;
+    transition: 0.3s;
+}
+
+.prediction .btn:hover {
+    transform: scale(1.04);
 }
 
 .prediction .hide-text .hide-text-container {
     padding: 62px 54px;
     max-width: 1300px;
     margin: 0 auto;
+}
+
+.prediction .hide-text-1 {
+
 }
 
 .footer {
@@ -1824,12 +1839,20 @@ nav {
 
     .mess {
         font-size: 21px;
-        padding: 23px 41px;
         min-width: 310px;
     }
 
+    .mess .mess-before {
+        padding: 23px 26px;
+    }
+
+    #mess-text,
+    #mess-text.fs-18 {
+        font-size: 16px;
+    }
+
     .mess .mess-before span {
-        bottom: -43px;
+        bottom: -23px;
     }
 
     .prediction .btn {
@@ -2596,7 +2619,7 @@ nav {
 
     .prediction .vector-box {
         display: flex;
-        gap: 20px;
+        gap: 0;
         align-items: flex-end;
         justify-content: center;
         font-size: 37px;
@@ -2605,10 +2628,11 @@ nav {
 
     .mess {
         background: #fff;
-        padding: 5px 20px;
         font-size: 12px;
         border-radius: 50px;
         margin-bottom: auto;
+        min-width: 165px;
+        transform: translateX(25px);
     }
 
     .prediction {
@@ -2628,16 +2652,19 @@ nav {
         height: 180px;
     }
 
-    .mess {
-        padding: 8px 13px;
-        min-width: 155px;
+    .mess .mess-before {
+        padding: 8px 11px;
     }
 
     .mess .mess-before span {
-        left: -13px;
-        bottom: -16px;
+        left: 8px;
+        bottom: -8px;
         width: 10px;
         height: 14px;
+    }
+
+    #mess-text, #mess-text.fs-18 {
+        font-size: 10px;
     }
 
     .prediction .btn {
@@ -2722,8 +2749,8 @@ nav {
     }   
 }
 
-@media (max-width: 410px) {
+/* @media (max-width: 410px) {
     .mess-container {
         transform: translate(25px, 10px);
     }
-}
+} */
