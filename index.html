@@ -495,16 +495,13 @@
                     collaborating
                     with some amazing
                     businesses, and who knows, maybe yours will be next?</p>
-                <p class="text__bottom">Currently updating portfolio , please check again later! <span><svg width="35"
-                            height="37" viewBox="0 0 35 37" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <line y1="-2" x2="32.5" y2="-2" transform="matrix(1 -1.39071e-07 -1.39071e-07 -1 0 0)"
-                                stroke="#FE5009" stroke-width="4" />
-                            <line y1="-2" x2="35" y2="-2" transform="matrix(-1.39071e-07 -1 -1 1.39071e-07 30.4248 35)"
-                                stroke="#FE5009" stroke-width="4" />
-                            <line y1="-2" x2="43.1933" y2="-2"
-                                transform="matrix(0.679562 -0.733618 -0.68134 -0.731967 0 33.5105)" stroke="#FE5009"
-                                stroke-width="4" />
-                        </svg></span></p>
+                <p class="text__bottom">Currently updating portfolio , please check again later! 
+                    <svg width="40" height="40" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line y1="-2" x2="40" y2="-2" transform="matrix(0 1 1 0 42 0)" stroke="#FE5009" stroke-width="4"/>
+                        <line y1="-2" x2="40" y2="-2" transform="matrix(1 0 0 -1 2 37.4458)" stroke="#FE5009" stroke-width="4"/>
+                        <line y1="-2" x2="51.1524" y2="-2" transform="matrix(0.707966 0.706246 0.706246 -0.707967 3.70117 0)" stroke="#FE5009" stroke-width="4"/>
+                    </svg>  
+                </p>
 
                 <div class="vector-box">
                     <span>🏗</span>
@@ -792,11 +789,11 @@
             });
     
 
-            function toggleHideContent(toggleButton, content) {
+            function toggleHideContent(toggleButton, content, contentBordersHeight = 0) {
                 toggleButton.addEventListener('click', function() {
                     if (!toggleButton.classList.contains('show-content')){
                         const contentHeight = content.children[0].scrollHeight;
-                        content.setAttribute('style', 'height: ' + contentHeight + 'px;');
+                        content.setAttribute('style', 'height: ' + (contentHeight + contentBordersHeight) + 'px;');
                         toggleButton.classList.add('show-content');
                     }
                     else {
@@ -820,12 +817,12 @@
             const answersHideText5 = document.querySelector('#answers-hide-text-5');
             const answersHideText6 = document.querySelector('#answers-hide-text-6');
 
-            toggleHideContent(answersBox1HideTextToggleButton, answersHideText1);
-            toggleHideContent(answersBox2HideTextToggleButton, answersHideText2);
-            toggleHideContent(answersBox3HideTextToggleButton, answersHideText3);
-            toggleHideContent(answersBox4HideTextToggleButton, answersHideText4);
-            toggleHideContent(answersBox5HideTextToggleButton, answersHideText5);
-            toggleHideContent(answersBox6HideTextToggleButton, answersHideText6);
+            toggleHideContent(answersBox1HideTextToggleButton, answersHideText1, 8);
+            toggleHideContent(answersBox2HideTextToggleButton, answersHideText2, 8);
+            toggleHideContent(answersBox3HideTextToggleButton, answersHideText3, 8);
+            toggleHideContent(answersBox4HideTextToggleButton, answersHideText4, 8);
+            toggleHideContent(answersBox5HideTextToggleButton, answersHideText5, 8);
+            toggleHideContent(answersBox6HideTextToggleButton, answersHideText6, 8);
 
 
             const predictionTexts = [
