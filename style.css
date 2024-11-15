@@ -251,7 +251,7 @@ nav {
 
 .hero .text .title img {
     height: 224px;
-    transform: translateY(-91px);
+    transform: translateY(-91px) scaleX(-1);
 }
 
 .hero .text p {
@@ -502,6 +502,7 @@ nav {
 .offer-row {
     display: flex;
     justify-content: space-between;
+    gap: 20px;
 }
 
 
@@ -523,11 +524,12 @@ nav {
     font-size: 48px;
     font-family: "Unbounded", sans-serif;
     text-transform: uppercase;
+    font-weight: 500;
 }
 
 .offer-card_header p {
     text-transform: uppercase;
-    font-size: 20px;
+    font-size: 36px;
 }
 
 .offer-card_number {
@@ -733,6 +735,7 @@ nav {
 
 .ours-is-not-list {
     display: grid;
+    padding-left: 88px;
     grid-template-columns: 1fr 1fr;
     gap: 32px;
 }
@@ -804,23 +807,33 @@ nav {
 }
 
 .why-box .icon-2 {
-    left: -135px;
+    font-size: 54px;
+    top: 99px;
+    left: -114px;
 }
 
 .why-box .icon-3 {
-    left: -165px;
+    font-size: 65px;
+    top: 90px;
+    left: -160px;
 }
 
 .why-box .icon-4 {
-    left: -135px;
+    font-size: 64px;
+    top: 85px;
+    left: -133px;
 }
 
 .why-box .icon-5 {
-    left: -150px;
+    font-size: 52px;
+    top: 100px;
+    left: -133px;
 }
 
 .why-box .icon-6 {
-    left: -150px;
+    font-size: 64px;
+    top: 85px;
+    left: -144px;
 }
 
 .why-box .why-box-icon-container-6 svg {
@@ -905,9 +918,9 @@ nav {
     color: var(--orange);
     font-family: "Unbounded", sans-serif;
     font-size: 32px;
-    width: 385px;
-    margin-left: auto;
-    margin-top: 40px;
+    font-weight: 500;
+    width: 400px;
+    margin-top: 42px;
 }
 
 .cases .image {
@@ -1134,6 +1147,15 @@ nav {
     text-align: right;
 }
 
+@keyframes scrollText {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
 .text-line {
     background: black;
     font-size: 64px;
@@ -1141,8 +1163,18 @@ nav {
     color: white;
     text-wrap: nowrap;
     width: 100%;
+    height: 120px;
     overflow: hidden;
     padding: 20px 0px;
+    position: relative;
+}
+
+.text-line p {
+    display: inline-block;
+    white-space: nowrap;
+    position: absolute;
+    will-change: transform;
+    animation: scrollText 10s linear infinite;
 }
 
 .answers .container {
@@ -1209,6 +1241,10 @@ nav {
     background-color: var(--orange);
 }
 
+.answers-box.show-content:hover {
+    border-color: var(--black);
+}
+
 .answers-box.show-content p{
     color: #fff;
 }
@@ -1223,8 +1259,14 @@ nav {
     transition: .3s;
 }
 
+.answers .hide-text {
+    transform: translateY(-24px);
+}
+
 .answers .hide-text-container {
-    padding: 0 60px;
+    padding: 26px 56px;
+    border: 4px solid black;
+    border-radius: 70px;
     font-size: 36px;
 }
 
@@ -1256,6 +1298,7 @@ nav {
     font-family: "Unbounded", sans-serif;
     max-width: 800px;
     margin-bottom: 59px;
+    text-transform: uppercase;
 }
 
 .chit-chat .row {
@@ -1353,18 +1396,24 @@ nav {
 .mess {
     background: #fff;
     font-family: "Unbounded", sans-serif;
-    font-size: 30px;
+    /*font-size: 30px;*/
     border-radius: 50px;
     margin-bottom: auto;
     position: absolute;
     top: 0;
     right: 0;
-    padding: 38px 70px;
     min-width: 488px;
 }
 
+
 .mess .mess-before {
     position: relative;
+    padding: 38px 70px;
+    font-size: 20px;
+}
+
+#mess-text.fs-18 {
+    font-size: 18px;
 }
 
 .mess .mess-before span {
@@ -1372,8 +1421,8 @@ nav {
     width: 15px;
     height: 30px;
     background-color: #fff;
-    bottom: -61px;
-    left: -35px;
+    left: 21px;
+    bottom: -22px;
     clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
     transform: rotate(211deg);
 }
@@ -1404,6 +1453,11 @@ nav {
     margin: 0 auto;
     margin-top: 30px;
     cursor: pointer;
+    transition: 0.3s;
+}
+
+.prediction .btn:hover {
+    transform: scale(1.04);
 }
 
 .prediction .hide-text .hide-text-container {
@@ -1411,6 +1465,7 @@ nav {
     max-width: 1300px;
     margin: 0 auto;
 }
+
 
 .footer {
     font-family: "Unbounded", sans-serif;
@@ -1462,20 +1517,22 @@ nav {
     height: 151%;
 }
 
-@media (max-width: 1280px) {
-    .hero .text .title img {
-        height: 128px;
-        transform: translateY(0);
-    }
-
-    .hero .line {
-        display: none;
-    }
-
+@media (max-width: 1300px) {
     .offer-row {
         flex-direction: column;
         align-items: center;
         row-gap: 22px;
+    }
+}
+
+@media (max-width: 1280px) {
+    .hero .text .title img {
+        height: 128px;
+        transform: translateY(0) scaleX(-1);
+    }
+
+    .hero .line {
+        display: none;
     }
 
     .banner h3 {
@@ -1685,6 +1742,11 @@ nav {
         font-size: 24px;
     }
 
+    .cases .text__bottom svg {
+        width: 25px;
+        height: 25px;
+    }
+
     .cases .vector-box {
         margin-top: 50px;
     }
@@ -1745,6 +1807,7 @@ nav {
 
     .text-line {
         font-size: 45px;
+        height: 96px;
     }
 
     .answers .container {
@@ -1824,12 +1887,20 @@ nav {
 
     .mess {
         font-size: 21px;
-        padding: 23px 41px;
         min-width: 310px;
     }
 
+    .mess .mess-before {
+        padding: 23px 26px;
+    }
+
+    #mess-text,
+    #mess-text.fs-18 {
+        font-size: 16px;
+    }
+
     .mess .mess-before span {
-        bottom: -43px;
+        bottom: -23px;
     }
 
     .prediction .btn {
@@ -1903,7 +1974,7 @@ nav {
 
     .hero .text .title img {
         height: 55px;
-        transform: translateY(-15px);
+        transform: translateY(-15px) scaleX(-1);
     }
 
     .hero .text p {
@@ -2185,10 +2256,10 @@ nav {
         margin-bottom: 23px;
     }
 
-
     .ours-is-not-list {
         grid-template-columns: 1fr;
         gap: 14px;
+        padding-left: 0;
     }
 
     .ours-is-not-list svg {
@@ -2290,7 +2361,11 @@ nav {
     .why-box-6 svg {
         width: 140px;
         height: 97px;
-        left: 30px;        
+        left: 30px;
+    }
+
+    .why-box .why-box-icon-container-6 svg {
+        left: 30px;
     }
 
     .why-box p {
@@ -2348,7 +2423,6 @@ nav {
     .cases .text__bottom svg {
         width: 16px;
         height: 16px;
-        transform: rotate(90deg);
     }
 
     .cases .image {
@@ -2473,6 +2547,7 @@ nav {
 
     .text-line {
         font-size: 26px;
+        height: 72px;
     }
 
     .answers .container {
@@ -2517,8 +2592,14 @@ nav {
         gap: 8px;
     }
 
+    .answers .hide-text {
+        transform: translateY(-10px);
+    }
+
     .answers .hide-text-container {
-        padding: 0 10px;
+        padding: 16px 16px;
+        border-width: 2px;
+        border-radius: 30px;
         font-size: 14px;
     }
 
@@ -2596,7 +2677,7 @@ nav {
 
     .prediction .vector-box {
         display: flex;
-        gap: 20px;
+        gap: 0;
         align-items: flex-end;
         justify-content: center;
         font-size: 37px;
@@ -2605,10 +2686,11 @@ nav {
 
     .mess {
         background: #fff;
-        padding: 5px 20px;
         font-size: 12px;
         border-radius: 50px;
         margin-bottom: auto;
+        min-width: 165px;
+        transform: translateX(25px);
     }
 
     .prediction {
@@ -2628,16 +2710,19 @@ nav {
         height: 180px;
     }
 
-    .mess {
-        padding: 8px 13px;
-        min-width: 155px;
+    .mess .mess-before {
+        padding: 8px 11px;
     }
 
     .mess .mess-before span {
-        left: -13px;
-        bottom: -16px;
+        left: 8px;
+        bottom: -8px;
         width: 10px;
         height: 14px;
+    }
+
+    #mess-text, #mess-text.fs-18 {
+        font-size: 10px;
     }
 
     .prediction .btn {
@@ -2722,8 +2807,8 @@ nav {
     }   
 }
 
-@media (max-width: 410px) {
+/* @media (max-width: 410px) {
     .mess-container {
         transform: translate(25px, 10px);
     }
-}
+} */
