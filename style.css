@@ -251,7 +251,7 @@ nav {
 
 .hero .text .title img {
     height: 224px;
-    transform: translateY(-91px);
+    transform: translateY(-91px) scaleX(-1);
 }
 
 .hero .text p {
@@ -1528,7 +1528,7 @@ nav {
 @media (max-width: 1280px) {
     .hero .text .title img {
         height: 128px;
-        transform: translateY(0);
+        transform: translateY(0) scaleX(-1);
     }
 
     .hero .line {
@@ -1974,7 +1974,7 @@ nav {
 
     .hero .text .title img {
         height: 55px;
-        transform: translateY(-15px);
+        transform: translateY(-15px) scaleX(-1);
     }
 
     .hero .text p {
