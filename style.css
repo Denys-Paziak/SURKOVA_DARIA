@@ -507,12 +507,15 @@ nav {
 
 
 .offer-card {
+    display: flex;
+    flex-direction: column;
     position: relative;
     background: var(--orange);
     border: 4px solid black;
     color: #fff;
     padding: 40px 24px;
     min-width: 416px;
+    min-height: 728px;
 }
 
 
@@ -529,10 +532,10 @@ nav {
 
 .offer-card_header p {
     text-transform: uppercase;
-    font-size: 36px;
+    font-size: 20px;
 }
 
-.offer-card_number {
+.offer-card_header p.offer-card_number {
     position: absolute;
     font-family: "Unbounded", sans-serif;
     top: 20px;
@@ -584,7 +587,7 @@ nav {
     gap: 10px;
     color: #fff;
     font-family: "Unbounded", sans-serif;
-    margin-top: 160px;
+    margin-top: auto;
     background: transparent;
     border: none;
     outline: none;
@@ -644,6 +647,10 @@ nav {
 
 .offer-card:nth-child(3) .offer-card_number {
     color: var(--orange);
+}
+
+.offer-card:nth-child(3) .offer-card_header p {
+    font-size: 19px;
 }
 
 .offer-card:nth-child(3) button {
@@ -2171,6 +2178,7 @@ nav {
         width: 100%;
         border: 2px solid black;
         padding: 20px;
+        min-height: 432px;
     }
 
 
@@ -2184,7 +2192,8 @@ nav {
         font-size: 25px;
     }
 
-    .offer-card_header p {
+    .offer-card_header p,
+    .offer-card:nth-child(3) .offer-card_header p {
         font-size: 14px;
     }
 
