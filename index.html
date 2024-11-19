@@ -533,7 +533,7 @@
                     <div><img src="images/get-started/get-started.jpg" alt=""></div>
                 </div>
                 <div class="form-container">
-                    <form action="">
+                    <form action="mailto:Srkvdesigns@gmail.com" method="POST" enctype="text/plain">
                         <h2>
                             get started 
                             <svg width="49" height="46" viewBox="0 0 49 46" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -543,22 +543,22 @@
                             </svg>
                         </h2>
                         <p class="text-1">Dear SRKV Team,</p>
-                        <p class="text-2">my name is <input type="text" placeholder="name">, FROM<input type="text" placeholder="brand">.</p>
+                        <p class="text-2">my name is <input type="text" name="name" placeholder="name">, FROM<input type="text" name="brand" placeholder="brand">.</p>
                         <p class="text-3">
                             I´m interested in : 
-                            <label><input type="radio" name="design" value="graphic" /><span>GRAPHIC DESIGN</span></label> 
+                            <label><input type="radio" name="design" value="graphic" checked /><span>GRAPHIC DESIGN</span></label> 
                             <label><input type="radio" name="design" value="brand" /><span>BRAND DESIGN</span></label> 
                             <label><input type="radio" name="design" value="digital" /><span>DIGITAL DESIGN</span></label>
                         </p>
                         <p class="text-4">
                             & ready to invest: 
                             <label><input type="radio" name="invest" value="300" /><span>&lt;€300</span></label>
-                            <label><input type="radio" name="invest" value="300-1500" /><span>€300-1500</span></label>
+                            <label><input type="radio" name="invest" value="300-1500" checked /><span>€300-1500</span></label>
                             <label><input type="radio" name="invest" value="1500-2000" /><span>€1500-2000</span></label>
                             <label><input type="radio" name="invest" value="2000+" /><span>€2000+</span></label>
                         </p>
-                        <p class="text-5">contact me back at: <input type="email" placeholder="email">.</p>
-                        <p class="text-6">Oh, and also some additional info: <input type="text" placeholder="your message"></p>
+                        <p class="text-5">contact me back at: <input type="email" name="email" placeholder="email">.</p>
+                        <p class="text-6">Oh, and also some additional info: <input type="text" name="message" placeholder="your message"></p>
                         <div class="submit-btn-container"><input class="submit-btn" value="SUBMIT" type="submit"></div>
                     </form>
                 </div>
@@ -715,10 +715,10 @@
                         <span>✉️</span>
                     </div>
                 </div>
-                <form action="">
-                    <input type="text" placeholder="name">
-                    <input type="email" placeholder="email">
-                    <textarea name="" id="" placeholder="YOUR MESSAGE"></textarea>
+                <form action="mailto:Srkvdesigns@gmail.com" method="POST" enctype="text/plain">
+                    <input type="text" name="name" placeholder="name" required>
+                    <input type="email" name="email" placeholder="email" required>
+                    <textarea name="message" id="" placeholder="YOUR MESSAGE"></textarea>
                     <input class="submit-btn" value="SUBMIT" type="submit">
                 </form>
             </div>
