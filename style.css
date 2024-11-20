@@ -21,6 +21,10 @@ body {
     font-family: "Montserrat", sans-serif;
 }
 
+a {
+    text-decoration: none;
+}
+
 .container {
     max-width: 1300px;
     width: 100%;
@@ -507,12 +511,15 @@ nav {
 
 
 .offer-card {
+    display: flex;
+    flex-direction: column;
     position: relative;
     background: var(--orange);
     border: 4px solid black;
     color: #fff;
     padding: 40px 24px;
     min-width: 416px;
+    min-height: 728px;
 }
 
 
@@ -529,10 +536,10 @@ nav {
 
 .offer-card_header p {
     text-transform: uppercase;
-    font-size: 36px;
+    font-size: 20px;
 }
 
-.offer-card_number {
+.offer-card_header p.offer-card_number {
     position: absolute;
     font-family: "Unbounded", sans-serif;
     top: 20px;
@@ -577,14 +584,14 @@ nav {
     gap: 16px;
 }
 
-.offer-card button {
+.offer-card a {
     position: relative;
     display: flex;
     justify-content: flex-start;
     gap: 10px;
     color: #fff;
     font-family: "Unbounded", sans-serif;
-    margin-top: 160px;
+    margin-top: auto;
     background: transparent;
     border: none;
     outline: none;
@@ -597,11 +604,11 @@ nav {
     transition: 0.3s;
 }
 
-.offer-card button p {
+.offer-card a p {
     position: relative;
 }
 
-.offer-card button p::before {
+.offer-card a p::before {
     content: "";
     position: absolute;
     width: 100%;
@@ -624,11 +631,11 @@ nav {
     color: var(--orange);
 }
 
-.offer-card:nth-child(2) button {
+.offer-card:nth-child(2) a {
     color: black;
 }
 
-.offer-card:nth-child(2) button p::before {
+.offer-card:nth-child(2) a p::before {
     background: black;
 }
 
@@ -646,65 +653,69 @@ nav {
     color: var(--orange);
 }
 
-.offer-card:nth-child(3) button {
+.offer-card:nth-child(3) .offer-card_header p {
+    font-size: 19px;
+}
+
+.offer-card:nth-child(3) a {
     color: var(--orange);
 }
 
-.offer-card:nth-child(3) button p::before {
+.offer-card:nth-child(3) a p::before {
     background: var(--orange);
 }
 
-.offer-card button p,
-.offer-card button p::before
-.offer-card button svg line {
+.offer-card a p,
+.offer-card a p::before
+.offer-card a svg line {
     transition: 0.3s;
 }
 
-.offer-card-1 button:hover p {
+.offer-card-1 a:hover p {
     color: var(--black);
 }
 
-.offer-card-1 button:active p {
+.offer-card-1 a:active p {
     color: var(--white);
 }
 
-.offer-card-1 button:hover p::before {
+.offer-card-1 a:hover p::before {
     background-color: var(--black);
 }
 
-.offer-card-1 button:active p::before {
+.offer-card-1 a:active p::before {
     background-color: var(--white);
 }
 
-.offer-card-1 button:hover svg line {
+.offer-card-1 a:hover svg line {
     stroke: var(--black);
 }
 
-.offer-card-1 button:active svg line {
+.offer-card-1 a:active svg line {
     stroke: var(--white);
 }
 
-.offer-card-2 button:hover p {
+.offer-card-2 a:hover p {
     color: var(--orange);
 }
 
-.offer-card-2 button:active p {
+.offer-card-2 a:active p {
     color: var(--black);
 }
 
-.offer-card-2 button:hover p::before {
+.offer-card-2 a:hover p::before {
     background-color: var(--orange);
 }
 
-.offer-card-2 button:active p::before {
+.offer-card-2 a:active p::before {
     background-color: var(--black);
 }
 
-.offer-card-2 button:hover svg line {
+.offer-card-2 a:hover svg line {
     stroke: var(--orange);
 }
 
-.offer-card-2 button:active svg line {
+.offer-card-2 a:active svg line {
     stroke: var(--black);
 }
 
@@ -712,6 +723,7 @@ nav {
     position: relative;
     margin-top: 173px;
     padding-bottom: 170px;
+    overflow: hidden;
 }
 
 .ours-is-not .title {
@@ -753,6 +765,7 @@ nav {
     position: absolute;
     top: 0;
     left: 0;
+    min-width: 150%;
     width: 100%;
     height: 100%;
     z-index: -1;
@@ -957,6 +970,7 @@ nav {
 .excellence {
     position: relative;
     padding: 200px 0;
+    overflow: hidden;
 }
 
 .excellence .bg {
@@ -969,6 +983,7 @@ nav {
 }
 
 .excellence .bg img {
+    min-width: 120%;
     width: 100%;
     height: 100%;
 }
@@ -994,6 +1009,7 @@ nav {
     max-width: 850px;
     margin: 10px auto;
     align-items: center;
+    gap: 8px;
 }
 
 .excellence .row span {
@@ -1009,9 +1025,24 @@ nav {
 }
 
 .get-started .img-container {
-    position: relative;
     min-width: 472px;
     min-height: 744px;
+}
+
+.get-started .img-container div {
+    position: relative;
+    display: flex;
+}
+
+.get-started .img-container div::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100% - 32px);
+    height: calc(100% - 32px);
+    border: 3px solid var(--orange);
 }
 
 .get-started form,
@@ -1043,7 +1074,7 @@ nav {
     padding: 0px 32px;
 }
 
-.get-started form p label input[type="checkbox"] {
+.get-started form p label input[type="radio"] {
     display: none;
 }
 
@@ -1055,7 +1086,7 @@ nav {
     cursor: pointer;
 }
 
-.get-started form p label input[type="checkbox"]:checked + span {
+.get-started form p label input[type="radio"]:checked + span {
     background-color: black;
     color: white;
 }
@@ -1147,34 +1178,25 @@ nav {
     text-align: right;
 }
 
-@keyframes scrollText {
-    from {
-        transform: translateX(100%);
-    }
-    to {
-        transform: translateX(-100%);
-    }
-}
-
 .text-line {
     background: black;
     font-size: 64px;
     font-family: "Unbounded", sans-serif;
     color: white;
-    text-wrap: nowrap;
     width: 100%;
     height: 120px;
     overflow: hidden;
-    padding: 20px 0px;
-    position: relative;
+    padding: 20px 0;
 }
 
-.text-line p {
-    display: inline-block;
+.text-line .horizontal-scroll-content {
+    display: flex;
+}
+
+.text-line .horizontal-scroll-content span {
     white-space: nowrap;
-    position: absolute;
-    will-change: transform;
-    animation: scrollText 10s linear infinite;
+    flex-shrink: 0;
+    padding: 0 20px;
 }
 
 .answers .container {
@@ -1290,7 +1312,20 @@ nav {
 }
 
 .chit-chat {
+    position: relative;
     padding-top: 147px;
+    overflow: hidden;
+}
+
+.chit-chat .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 150%;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    object-position: -325px 0;
 }
 
 .chit-chat .title {
@@ -1349,6 +1384,7 @@ nav {
     width: 100%;
     font-size: 28px;
     text-transform: uppercase;
+    background-color: transparent;
 }
 
 .chit-chat form textarea {
@@ -1361,6 +1397,7 @@ nav {
 
 .chit-chat form .submit-btn {
     border: 3px solid black;
+    background-color: var(--orange);
 }
 
 
@@ -1386,6 +1423,15 @@ nav {
     position: relative;
 }
 
+.vector-box-icon-1 {
+    transform: translateX(80px);
+    z-index: 0;
+}
+
+.prediction .vector-box svg {
+    z-index: 1;
+}
+
 .mess-container {
     width: 0;
     position: relative;
@@ -1409,11 +1455,11 @@ nav {
 .mess .mess-before {
     position: relative;
     padding: 38px 70px;
-    font-size: 20px;
+    font-size: 27px;
 }
 
-#mess-text.fs-18 {
-    font-size: 18px;
+.mess .mess-before.less-paddings {
+    padding: 15px 25px 15px 30px;
 }
 
 .mess .mess-before span {
@@ -1487,6 +1533,8 @@ nav {
 
 .footer .row {
     gap: 24px;
+    position: relative;
+    z-index: 1;
 }
 
 .footer .level-up {
@@ -1879,6 +1927,7 @@ nav {
 
     .prediction .container {
         border-radius: 40px;
+        padding: 80px 70px;
     }
 
     .mess-container {
@@ -1890,12 +1939,13 @@ nav {
         min-width: 310px;
     }
 
-    .mess .mess-before {
+    .mess .mess-before,
+    .mess .mess-before.less-paddings {
         padding: 23px 26px;
     }
 
     #mess-text,
-    #mess-text.fs-18 {
+    #mess-text.less-paddings {
         font-size: 16px;
     }
 
@@ -2171,6 +2221,7 @@ nav {
         width: 100%;
         border: 2px solid black;
         padding: 20px;
+        min-height: 432px;
     }
 
 
@@ -2184,7 +2235,8 @@ nav {
         font-size: 25px;
     }
 
-    .offer-card_header p {
+    .offer-card_header p,
+    .offer-card:nth-child(3) .offer-card_header p {
         font-size: 14px;
     }
 
@@ -2213,14 +2265,14 @@ nav {
     }
 
 
-    .offer-card button {
+    .offer-card a {
         gap: 10px;
         margin-top: 50px;
         font-size: 20px;
         line-height: 20px;
     }
 
-    .offer-card button p::before {
+    .offer-card a p::before {
         content: "";
         position: absolute;
         width: 100%;
@@ -2230,7 +2282,7 @@ nav {
         background: white;
     }
 
-    .offer-card button svg {
+    .offer-card a svg {
         width: 25px;
         height: 26px;
     }
@@ -2508,15 +2560,21 @@ nav {
         font-size: 14px;
         line-height: 17.36px;
     }
+    
 
     .get-started form p span,
     .get-started form .text-3 span:nth-child(3) {
         padding: 0 12px;
     }
 
+    .get-started form p label span {
+        border-width: 1.36px;
+    }
+
     .get-started form .text-2 input, .get-started form .text-5 input, .get-started form .text-6 input {
         font-size: 14px;
         line-height: 17.36px;
+        border-width: 1.36px;
     }
 
     .get-started form .text-3,
@@ -2537,6 +2595,7 @@ nav {
         line-height: 16.36px;
         max-width: 102px;
         padding: 8px 11px;
+        border-width: 1.36px;
     }
 
     .get-started .img-container {
@@ -2606,7 +2665,7 @@ nav {
     .chit-chat {
         padding: 0 33px;
     }
-
+    
     .chit-chat .title {
         font-size: 22px;
         font-family: "Unbounded", sans-serif;
@@ -2683,6 +2742,9 @@ nav {
         font-size: 37px;
     }
 
+    .vector-box-icon-1 {
+        transform: translateX(25px);
+    }
 
     .mess {
         background: #fff;
@@ -2695,7 +2757,7 @@ nav {
 
     .prediction {
         margin-top: 70px;
-        margin-bottom: 170px;
+        margin-bottom: 96px;
     }
 
     .prediction .vector {
@@ -2710,7 +2772,8 @@ nav {
         height: 180px;
     }
 
-    .mess .mess-before {
+    .mess .mess-before,
+    .mess .mess-before.less-paddings {
         padding: 8px 11px;
     }
 
@@ -2721,7 +2784,7 @@ nav {
         height: 14px;
     }
 
-    #mess-text, #mess-text.fs-18 {
+    #mess-text {
         font-size: 10px;
     }
 
@@ -2791,6 +2854,12 @@ nav {
         left: -39px;
     }
 
+}
+
+@media (max-width: 650px) {
+    .chit-chat .bg {
+        min-width: 200%;
+    }
 }
 
 @media (max-width: 600px) {
