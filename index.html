@@ -533,7 +533,7 @@
                     <div><img src="images/get-started/get-started.jpg" alt=""></div>
                 </div>
                 <div class="form-container">
-                    <form action="mailto:Srkvdesigns@gmail.com" method="POST" enctype="text/plain">
+                    <form id="get-started-form">
                         <h2>
                             get started 
                             <svg width="49" height="46" viewBox="0 0 49 46" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -543,21 +543,21 @@
                             </svg>
                         </h2>
                         <p class="text-1">Dear SRKV Team,</p>
-                        <p class="text-2">my name is <input type="text" name="name" placeholder="name">, FROM<input type="text" name="brand" placeholder="brand">.</p>
+                        <p class="text-2">my name is <input type="text" name="name" placeholder="name" required>, FROM<input type="text" name="brand" placeholder="brand" required>.</p>
                         <p class="text-3">
                             I´m interested in : 
-                            <label><input type="radio" name="design" value="graphic" checked /><span>GRAPHIC DESIGN</span></label> 
-                            <label><input type="radio" name="design" value="brand" /><span>BRAND DESIGN</span></label> 
-                            <label><input type="radio" name="design" value="digital" /><span>DIGITAL DESIGN</span></label>
+                            <label><input type="radio" name="design" value="GRAPHIC DESIGN" checked /><span>GRAPHIC DESIGN</span></label> 
+                            <label><input type="radio" name="design" value="BRAND DESIGN" /><span>BRAND DESIGN</span></label> 
+                            <label><input type="radio" name="design" value="DIGITAL DESIGN" /><span>DIGITAL DESIGN</span></label>
                         </p>
                         <p class="text-4">
                             & ready to invest: 
-                            <label><input type="radio" name="invest" value="300" /><span>&lt;€300</span></label>
-                            <label><input type="radio" name="invest" value="300-1500" checked /><span>€300-1500</span></label>
-                            <label><input type="radio" name="invest" value="1500-2000" /><span>€1500-2000</span></label>
-                            <label><input type="radio" name="invest" value="2000+" /><span>€2000+</span></label>
+                            <label><input type="radio" name="invest" value="€300" /><span>&lt;€300</span></label>
+                            <label><input type="radio" name="invest" value="€300-1500" checked /><span>€300-1500</span></label>
+                            <label><input type="radio" name="invest" value="€1500-2000" /><span>€1500-2000</span></label>
+                            <label><input type="radio" name="invest" value="€2000+" /><span>€2000+</span></label>
                         </p>
-                        <p class="text-5">contact me back at: <input type="email" name="email" placeholder="email">.</p>
+                        <p class="text-5">contact me back at: <input type="email" name="email" placeholder="email" required>.</p>
                         <p class="text-6">Oh, and also some additional info: <input type="text" name="message" placeholder="your message"></p>
                         <div class="submit-btn-container"><input class="submit-btn" value="SUBMIT" type="submit"></div>
                     </form>
@@ -715,10 +715,10 @@
                         <span>✉️</span>
                     </div>
                 </div>
-                <form action="mailto:Srkvdesigns@gmail.com" method="POST" enctype="text/plain">
+                <form id="chit-chat-form">
                     <input type="text" name="name" placeholder="name" required>
                     <input type="email" name="email" placeholder="email" required>
-                    <textarea name="message" id="" placeholder="YOUR MESSAGE"></textarea>
+                    <textarea name="message" id="" placeholder="YOUR MESSAGE" required></textarea>
                     <input class="submit-btn" value="SUBMIT" type="submit">
                 </form>
             </div>
@@ -749,7 +749,8 @@
         <div class="container">
             <div class="row">
                 <!-- <a href="">INSTAGRAM</a> -->
-                <a href="mailto:Srkvdesigns@gmail.com">GMAIL</a>
+                <a href="mailto:Srkvdesigns@gmail.com">GMAIL <span></span></a>
+                
             </div>
             <p class="level-up">LEVEL UP yOUR GAME</p>
             <img class="footer-bg" src="images/SRKV.svg" alt="SRKV">
@@ -763,6 +764,17 @@
 
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init({
+            publicKey: "_c0PR9kQlNMqVRuQF",
+        });
+    })();
+    </script>
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
@@ -911,6 +923,52 @@
 
             window.addEventListener('scroll', animateCounter);
             animateCounter();
+
+            /*
+            document.getElementById('get-started-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                const formData = new FormData(event.target);
+                const data = {}; 
+
+                formData.forEach((value, key) => {
+                    data[key] = value;
+                });
+
+                emailjs.send("service_ms0e7qf","template_wzau2op", data)
+                    .then(response => {
+                        alert('Your message has been sent successfully!');
+                        console.log('SUCCESS!', response.status, response.text);
+                        event.target.reset();
+                    })
+                    .catch(error => {
+                        alert('Something went wrong. Please try again.');
+                        console.error('FAILED...', error);
+                    });
+            });
+
+            document.getElementById('chit-chat-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                const formData = new FormData(event.target);
+                const data = {}; 
+
+                formData.forEach((value, key) => {
+                    data[key] = value;
+                });
+
+                emailjs.send("service_ms0e7qf","template_lb1474f", data)
+                    .then(response => {
+                        alert('Your message has been sent successfully!');
+                        console.log('SUCCESS!', response.status, response.text);
+                        event.target.reset();
+                    })
+                    .catch(error => {
+                        alert('Something went wrong. Please try again.');
+                        console.error('FAILED...', error);
+                    });
+            });
+            */
         });
     </script>
 </body>
